@@ -9,6 +9,14 @@
     <style name="Theme.OpeninApp" parent="Base.Theme.OpeninApp" />
     <style name="mystyledbutton" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">10dp</item>
-        <item name="colorPrimary">@color/black</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
+    <style name="mystyledbutton2" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeColor">@android:color/holo_green_light</item>
+    </style>
+    <style name="mystyledbutton3" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeColor">@color/marine</item>
     </style>
 </resources>

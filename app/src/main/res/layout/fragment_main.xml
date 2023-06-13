@@ -145,27 +145,33 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="16dp"
                 android:backgroundTint="@color/alice_blue"
                 android:id="@+id/talkwithus"
                 android:layout_marginTop="52dp"
                 android:drawableLeft="@drawable/whatsappsml"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textStyle="bold"
                 android:gravity="left|center_vertical"
                 app:layout_constraintTop_toBottomOf="@id/viewAllLinks"
-                style="@style/mystyledbutton"
-                android:text="Talk With Us"/>
+                style="@style/mystyledbutton2"
+                android:text="Talk with us"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="16dp"
                 android:backgroundTint="@color/alice_blue"
                 android:id="@+id/faq"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
                 android:drawableTint="@color/marine"
                 android:layout_marginTop="16dp"
+                android:textStyle="bold"
                 android:drawableLeft="@drawable/question"
                 android:gravity="left|center_vertical"
                 app:layout_constraintTop_toBottomOf="@id/talkwithus"
-                style="@style/mystyledbutton"
+                style="@style/mystyledbutton3"
                 android:text="Frequently Asked Questions"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
