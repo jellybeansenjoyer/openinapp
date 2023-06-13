@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/marine"
@@ -17,7 +18,6 @@
         android:scaleType="centerCrop"
         android:backgroundTint="@color/marine_light"
         android:src="@drawable/settings"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +38,9 @@
         app:cardCornerRadius="20dp"
         android:backgroundTint="@color/grey_light"
         android:layout_marginBottom="-30dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:padding="20dp"
@@ -53,6 +56,7 @@
                 android:textSize="18dp"
                 android:textColor="@android:color/darker_gray"/>
             <TextView
+                app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,6 +66,108 @@
                 android:textSize="25dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintTop_toBottomOf="@id/greetings_text_view"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="28dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@id/name_text_view"
+                tools:layout_editor_absoluteX="-2dp"></androidx.cardview.widget.CardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recycler_view_social"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_view"
+                android:layout_marginTop="20dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/viewAnalytics"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/growth"
+                android:paddingStart="80dp"
+                android:gravity="left|center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_social"
+                style="@style/mystyledbutton"
+                android:text="View analytics"/>
+            <Button
+                android:id="@+id/topLinksButton"
+                android:layout_marginTop="58dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewAnalytics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Links"
+                android:backgroundTint="@color/marine" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/topLinksButton"
+                android:id="@+id/recentLinks"
+                android:layout_marginTop="58dp"
+                android:layout_marginStart="24dp"
+                android:text="Recent Links"
+                android:backgroundTint="@color/marine"
+                app:layout_constraintTop_toBottomOf="@id/viewAnalytics"/>
+            <ImageButton
+                android:layout_marginTop="58dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@drawable/rounded_corners"
+                app:layout_constraintTop_toBottomOf="@id/viewAnalytics"
+                app:tint="@color/black"
+                android:layout_width="50dp"
+                android:elevation="20dp"
+                android:layout_height="50dp"
+                android:src="@drawable/search"
+                android:padding="10dp"
+                android:scaleType="centerCrop"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recycler_view_2"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recentLinks"
+                android:layout_marginTop="10dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/viewAllLinks"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/linksml"
+                android:paddingStart="80dp"
+                android:gravity="left|center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_2"
+                style="@style/mystyledbutton"
+                android:text="View All Links"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:backgroundTint="@color/alice_blue"
+                android:id="@+id/talkwithus"
+                android:layout_marginTop="52dp"
+                android:drawableLeft="@drawable/whatsappsml"
+                android:gravity="left|center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/viewAllLinks"
+                style="@style/mystyledbutton"
+                android:text="Talk With Us"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:backgroundTint="@color/alice_blue"
+                android:id="@+id/faq"
+                android:drawableTint="@color/marine"
+                android:layout_marginTop="16dp"
+                android:drawableLeft="@drawable/question"
+                android:gravity="left|center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/talkwithus"
+                style="@style/mystyledbutton"
+                android:text="Frequently Asked Questions"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
