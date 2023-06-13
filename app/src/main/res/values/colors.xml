@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="marine">#0E6FFF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="marine_light">#2b80ff</color>
 </resources>
