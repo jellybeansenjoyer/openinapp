@@ -3,5 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="marine">#0E6FFF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey_light">#f5f5f5</color>
     <color name="marine_light">#2b80ff</color>
+    <color name="alice_blue">#e8f1ff</color>
 </resources>
