@@ -6,6 +6,6 @@ import retrofit2.http.Header
 import retrofit2.http.Headers
 
 interface ApiService {
-    @GET("/")
+    @GET("dashboardNew/")
     suspend fun call(@Header("Authorization") token:String): Response
 }
