@@ -25,8 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         mViewModel = ViewModelProvider(this,MyFactory((application as MainApplication).repo)).get(MainViewModel::class.java)
         if(getSharedPreferences("MyPref",Context.MODE_PRIVATE).getString("token","").equals(""))
-        getSharedPreferences("MyPref",Context.MODE_PRIVATE).edit().putString("token","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCkW0ox8tbjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI").apply()
-
+            getSharedPreferences("MyPref",Context.MODE_PRIVATE).edit().putString("token","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCkW0ox8tbjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI").apply()
         val token = getSharedPreferences("MyPref",Context.MODE_PRIVATE).getString("token","")
         mViewModel.getResponse(token!!)
         supportFragmentManager.commit {
