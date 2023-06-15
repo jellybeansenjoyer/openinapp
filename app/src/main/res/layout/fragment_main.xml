@@ -82,7 +82,7 @@
                     android:layout_below="@id/date_ends"
                     android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"/>
+                    android:layout_height="250dp"/>
             </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -99,13 +99,15 @@
                 android:textSize="16dp"
                 android:id="@+id/viewAnalytics"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/growth"
                 android:textStyle="bold"
+                app:iconPadding="18dp"
+                app:icon="@drawable/price_boost"
+                app:iconGravity="textStart"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/recycler_view_social"
-                style="@style/mystyledbutton"
+                style="@style/mystyledbutton4"
                 android:text="View analytics"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -162,13 +164,14 @@
 <!--                app:layout_constraintTop_toBottomOf="@id/viewAnalytics"/>-->
             <ImageButton
                 app:layout_constraintEnd_toEndOf="parent"
-                android:background="@drawable/rounded_corners"
                 app:layout_constraintTop_toTopOf="@id/LinearLayoutForChips"
+                android:background="@drawable/searchshape"
+                android:backgroundTint="#f2f2f2"
                 app:tint="@color/black"
                 android:layout_width="50dp"
                 android:elevation="20dp"
                 android:layout_height="50dp"
-                android:src="@drawable/search"
+                android:src="@drawable/search__stroke_"
                 android:padding="10dp"
                 android:scaleType="centerCrop"/>
             <androidx.recyclerview.widget.RecyclerView
@@ -186,12 +189,12 @@
                 android:textSize="16dp"
                 android:id="@+id/viewAllLinks"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/linksml"
-                android:paddingStart="80dp"
-                android:gravity="left|center_vertical"
+                app:iconGravity="textStart"
+                app:icon="@drawable/link"
+                app:iconPadding="18dp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/recycler_view_2"
-                style="@style/mystyledbutton"
+                style="@style/mystyledbutton4"
                 android:text="View all Links"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -199,6 +202,7 @@
                 android:textSize="16dp"
                 android:backgroundTint="@color/alice_blue"
                 android:id="@+id/talkwithus"
+                app:iconPadding="12dp"
                 android:layout_marginTop="52dp"
                 android:drawableLeft="@drawable/whatsappsml"
                 android:paddingTop="20dp"
@@ -221,6 +225,7 @@
                 android:textStyle="bold"
                 android:drawableLeft="@drawable/question"
                 android:gravity="left|center_vertical"
+                app:iconPadding="12dp"
                 app:layout_constraintTop_toBottomOf="@id/talkwithus"
                 style="@style/mystyledbutton3"
                 android:text="Frequently Asked Questions"/>
