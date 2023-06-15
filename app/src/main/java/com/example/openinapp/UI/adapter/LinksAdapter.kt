@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +16,7 @@ import com.example.openinapp.databinding.LinkModelBinding
 import java.text.SimpleDateFormat
 
 private const val TAG = "LinksAdapter"
-class LinksAdapter() : RecyclerView.Adapter<LinksAdapter.LinksViewHolder>() {
+class LinksAdapter(private val itemClickListener: onItemClick) : RecyclerView.Adapter<LinksAdapter.LinksViewHolder>() {
     private var oldList: ArrayList<Links> = ArrayList()
     private var exampleListFull: List<Links>
 
@@ -23,7 +24,7 @@ class LinksAdapter() : RecyclerView.Adapter<LinksAdapter.LinksViewHolder>() {
         exampleListFull = ArrayList(oldList)
     }
 
-    class LinksViewHolder(private val view: View, private val parent: ViewGroup) :
+    class LinksViewHolder(private val view: View, private val parent: ViewGroup,private val onItemClick: onItemClick) :
         RecyclerView.ViewHolder(view) {
         private val mBinding: LinkModelBinding
 
@@ -48,6 +49,12 @@ class LinksAdapter() : RecyclerView.Adapter<LinksAdapter.LinksViewHolder>() {
                 Glide.with(parent.context).load(data.drawable).into(mBinding.imageView)
                 mBinding.clicksTextView.setText(data.clicks)
                 mBinding.linkTextView.setText(data.link)
+                mBinding.copyLinkButton.setOnClickListener {
+                    onItemClick.onCopyClicked(mBinding.linkTextView.text.toString())
+                }
+                mBinding.linkTextView.setOnClickListener {
+                    onItemClick.onLinkClicked(mBinding.linkTextView.text.toString())
+                }
             }
         }
     }
@@ -55,7 +62,7 @@ class LinksAdapter() : RecyclerView.Adapter<LinksAdapter.LinksViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinksViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.link_model, parent, false)
-        return LinksViewHolder(view, parent)
+        return LinksViewHolder(view, parent,itemClickListener)
     }
 
     override fun onBindViewHolder(holder: LinksViewHolder, position: Int) {
