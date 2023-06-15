@@ -152,6 +152,7 @@ class MainFragment : Fragment(),onItemClick {
         // Customize the X-axis
         val xAxis: XAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.labelRotationAngle = -45f
         xAxis.valueFormatter = IndexAxisValueFormatter(dates)
 
         // Customize the Y-axis

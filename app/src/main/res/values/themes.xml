@@ -13,8 +13,9 @@
     </style>
     <style name="mystyledbutton4" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">10dp</item>
-        <item name="strokeColor">@color/grey_light</item>
+        <item name="strokeColor">@android:color/darker_gray</item>
     </style>
+
     <style name="mystyledbutton2" parent="Widget.Material3.Button.OutlinedButton">
         <item name="cornerRadius">10dp</item>
         <item name="strokeColor">@android:color/holo_green_light</item>
