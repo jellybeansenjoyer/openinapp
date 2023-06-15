@@ -7,9 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.openinapp.Model.Links
+import com.example.openinapp.Model.OverallUrlChart
 import com.example.openinapp.Model.Response
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
+import kotlin.reflect.full.memberProperties
 
 private const val TAG = "MainViewModel"
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
@@ -53,8 +55,15 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
         }
         return recentLinksModel
     }
+    fun graphData():Map<String,String>{
+        val graph = _response.value!!.data.overall_url_chart
+        val map = HashMap<String,String>()
+        for (property in OverallUrlChart::class.memberProperties) {
+            map[property.name] = property.get(graph).toString()
+        }
+        return map
+    }
 }
-
 class MyFactory(private val repository: MainRepository) : ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if(modelClass.equals(MainViewModel::class.java)){

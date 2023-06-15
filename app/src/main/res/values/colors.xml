@@ -9,4 +9,7 @@
     <color name="alice_blue_dark">#e2edff</color>
     <color name="light_violet">#ebe6f9</color>
     <color name="light_red">#ffe9ec</color>
+    <color name="more_alice">#99bae8</color>
+    <color name="morelessalice">#a3bfe6</color>
+    <color name="darker">#aaa</color>
 </resources>
